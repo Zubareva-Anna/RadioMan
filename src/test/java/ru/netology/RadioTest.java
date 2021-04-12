@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestRadio {
+public class RadioTest {
     @Test
     public void clickChannel() {
         Radio radio = new Radio();
-        assertEquals( 0, radio.getCurrentRadioStation());
+        assertEquals(0, radio.getCurrentRadioStation());
         radio.setCurrentRadioStation(9);
         assertEquals(9, radio.getCurrentRadioStation());
         radio.setCurrentRadioStation(10);
@@ -62,6 +62,7 @@ public class TestRadio {
         radio.prevStation();
         assertEquals(8, radio.getCurrentRadioStation());
     }
+
     @Test
     public void clickToMaxVolume() {
         Radio radio = new Radio();
@@ -97,9 +98,9 @@ public class TestRadio {
     @Test
     public void clickToMinVolume() {
         Radio radio = new Radio();
-        assertEquals(0,radio.getCurrentVolume());
+        assertEquals(0, radio.getCurrentVolume());
         radio.decreaseVolume();
-        assertEquals(0,radio.getCurrentVolume());
+        assertEquals(0, radio.getCurrentVolume());
 
     }
 
