@@ -18,6 +18,13 @@ public class RadioTest {
     }
 
     @Test
+    public void countChannel() {
+        Radio radio = new Radio(5);
+        assertEquals(5, radio.getCountRadioStation());
+    }
+
+
+    @Test
     public void changeChannel() {
         Radio radio = new Radio();
         assertEquals(0, radio.getCurrentRadioStation());
@@ -29,7 +36,7 @@ public class RadioTest {
 
     @Test
     public void changeToMaxChannel() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(5);
         assertEquals(0, radio.getCurrentRadioStation());
         radio.nextStation();
         assertEquals(1, radio.getCurrentRadioStation());
@@ -40,16 +47,7 @@ public class RadioTest {
         radio.nextStation();
         assertEquals(4, radio.getCurrentRadioStation());
         radio.nextStation();
-        assertEquals(5, radio.getCurrentRadioStation());
-        radio.nextStation();
-        assertEquals(6, radio.getCurrentRadioStation());
-        radio.nextStation();
-        assertEquals(7, radio.getCurrentRadioStation());
-        radio.nextStation();
-        assertEquals(8, radio.getCurrentRadioStation());
-        radio.nextStation();
-        assertEquals(9, radio.getCurrentRadioStation());
-        radio.nextStation();
+//        assertNotEquals(5, radio.getCurrentRadioStation());
         assertEquals(0, radio.getCurrentRadioStation());
     }
 
