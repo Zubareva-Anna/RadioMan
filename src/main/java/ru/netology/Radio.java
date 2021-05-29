@@ -1,27 +1,30 @@
 package ru.netology;
 
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@Data
+
 public class Radio {
 
     private int currentRadioStation;
     private int minRadioStation = 0;
     private int maxRadioStation = 9;
+    private int countRadioStation = 10;
     private int currentVolume;
     private int minVolume = 0;
     private int maxVolume = 10;
 
-    public Radio(int currentRadioStation,
-                 int minRadioStation,
-                 int maxRadioStation,
-                 int currentVolume,
-                 int minVolume,
-                 int maxVolume) {
-        this.currentRadioStation = currentRadioStation;
-        this.minRadioStation = minRadioStation;
-        this.maxRadioStation = maxRadioStation;
-        this.currentVolume = currentVolume;
-        this.minVolume = minVolume;
-        this.maxVolume = maxVolume;
+
+    public Radio(int countRadioStation) {
+        this.countRadioStation = countRadioStation;
+        this.maxRadioStation = countRadioStation - 1;
     }
+
+//    public Radio() {
+//    }
 
     public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation < minRadioStation) {
@@ -31,11 +34,6 @@ public class Radio {
             return;
         }
         this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getCurrentRadioStation() {
-
-        return currentRadioStation;
     }
 
     public void prevStation() {
@@ -54,17 +52,6 @@ public class Radio {
         }
     }
 
-    public int getMinRadioStation() {
-        return minRadioStation;
-    }
-
-    public int getMaxRadioStation() {
-        return maxRadioStation;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
 
     public void decreaseVolume() {
         this.currentVolume--;
@@ -82,13 +69,48 @@ public class Radio {
         }
     }
 
-    public int getMinVolume() {
-
-        return minVolume;
+    public void setMinRadioStation(int minRadioStation) {
+        this.minRadioStation = minRadioStation;
     }
 
-    public int getMaxVolume() {
-
-        return maxVolume;
+    public void setMinVolume(int minVolume) {
+        this.minVolume = minVolume;
     }
+
+    public void setMaxVolume(int maxVolume) {
+        this.maxVolume = maxVolume;
+    }
+
+//    public int getCountRadioStation() {
+//        return countRadioStation;
+//    }
+//
+//    public int getCurrentRadioStation() {
+//
+//        return currentRadioStation;
+//    }
+//    public int getMinRadioStation() {
+//
+//        return minRadioStation;
+//    }
+//
+//    public int getMaxRadioStation() {
+//
+//        return maxRadioStation;
+//    }
+//
+//    public int getCurrentVolume() {
+//
+//        return currentVolume;
+//    }
+//
+//    public int getMinVolume() {
+//
+//        return minVolume;
+//    }
+//
+//    public int getMaxVolume() {
+//
+//        return maxVolume;
+//    }
 }
