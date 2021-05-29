@@ -1,5 +1,10 @@
 package ru.netology;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@AllArgsConstructor
+@Data
 public class Radio {
 
     private int currentRadioStation;
@@ -9,19 +14,19 @@ public class Radio {
     private int minVolume = 0;
     private int maxVolume = 10;
 
-    public Radio(int currentRadioStation,
-                 int minRadioStation,
-                 int maxRadioStation,
-                 int currentVolume,
-                 int minVolume,
-                 int maxVolume) {
-        this.currentRadioStation = currentRadioStation;
-        this.minRadioStation = minRadioStation;
-        this.maxRadioStation = maxRadioStation;
-        this.currentVolume = currentVolume;
-        this.minVolume = minVolume;
-        this.maxVolume = maxVolume;
-    }
+//    public Radio(int currentRadioStation,
+//                 int minRadioStation,
+//                 int maxRadioStation,
+//                 int currentVolume,
+//                 int minVolume,
+//                 int maxVolume) {
+//        this.currentRadioStation = currentRadioStation;
+//        this.minRadioStation = minRadioStation;
+//        this.maxRadioStation = maxRadioStation;
+//        this.currentVolume = currentVolume;
+//        this.minVolume = minVolume;
+//        this.maxVolume = maxVolume;
+//    }
 
     public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation < minRadioStation) {
@@ -31,11 +36,6 @@ public class Radio {
             return;
         }
         this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getCurrentRadioStation() {
-
-        return currentRadioStation;
     }
 
     public void prevStation() {
@@ -54,17 +54,32 @@ public class Radio {
         }
     }
 
-    public int getMinRadioStation() {
-        return minRadioStation;
-    }
-
-    public int getMaxRadioStation() {
-        return maxRadioStation;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
+//    public int getCurrentRadioStation() {
+//
+//        return currentRadioStation;
+//    }
+//
+//    public int getMinRadioStation() {
+//        return minRadioStation;
+//    }
+//
+//    public int getMaxRadioStation() {
+//        return maxRadioStation;
+//    }
+//
+//    public int getCurrentVolume() {
+//        return currentVolume;
+//    }
+//
+//    public int getMinVolume() {
+//
+//        return minVolume;
+//    }
+//
+//    public int getMaxVolume() {
+//
+//        return maxVolume;
+//    }
 
     public void decreaseVolume() {
         this.currentVolume--;
@@ -80,15 +95,5 @@ public class Radio {
             currentVolume = maxVolume;
             return;
         }
-    }
-
-    public int getMinVolume() {
-
-        return minVolume;
-    }
-
-    public int getMaxVolume() {
-
-        return maxVolume;
     }
 }
